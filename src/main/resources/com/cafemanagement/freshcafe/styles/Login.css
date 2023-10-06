@@ -1,0 +1,14 @@
+#SignInBtn{
+    -fx-background-radius: 20px;
+    -fx-background-color: #AAA3A0;
+    -fx-text-fill: #4D4C4C;
+    -fx-font-family: "Hack Nerd Font";
+    -fx-font-size: 28px;
+    -fx-font-weight: 400;
+    -fx-cursor: hand;
+}
+
+#SignInBtn:hover{
+    -fx-background-color: #d2c8c5;
+    -fx-text-fill: #818181;
+}

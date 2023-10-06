@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../styles/Login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.LoginController">
+    <left>
+        <ImageView cache="true" fitHeight="1080.0" fitWidth="800.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+            <image>
+                <Image url="@../assets/loginPage/pic_for_login.jpg" />
+            </image>
+        </ImageView>
+    </left>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label id="font" alignment="CENTER" contentDisplay="CENTER" text="Sign In" textAlignment="CENTER">
+                    <font>
+                        <Font name="Hack Nerd Font Regular" size="68.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Label>
+                <Label text="Welcome 3rd Modern Cafe">
+                    <font>
+                        <Font name="Hack Nerd Font Regular" size="36.0" />
+                    </font>
+                </Label>
+                <FlowPane alignment="CENTER" hgap="70.0">
+                    <children>
+                        <ImageView fitHeight="55.0" fitWidth="53.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../assets/loginPage/user.png" />
+                            </image>
+                        </ImageView>
+                        <TextField fx:id="userField" focusTraversable="false" prefHeight="68.0" prefWidth="636.0" promptText="username">
+                            <font>
+                                <Font name="Hack Nerd Font Regular" size="20.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="71.0" />
+                    </padding>
+                </FlowPane>
+                <FlowPane alignment="CENTER" hgap="70.0">
+                    <children>
+                        <ImageView fitHeight="55.0" fitWidth="53.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../assets/loginPage/password.png" />
+                            </image>
+                        </ImageView>
+                        <PasswordField fx:id="passwordField" focusTraversable="false" prefHeight="68.0" prefWidth="636.0" promptText="password">
+                            <font>
+                                <Font name="Hack Nerd Font Regular" size="20.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                    <padding>
+                        <Insets top="71.0" />
+                    </padding>
+                </FlowPane>
+                <Button id="SignInBtn" fx:id="signInBtn" mnemonicParsing="false" onAction="#signInBtn" prefHeight="56.0" prefWidth="233.0" text="Sign In">
+                    <VBox.margin>
+                        <Insets top="187.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+</BorderPane>
