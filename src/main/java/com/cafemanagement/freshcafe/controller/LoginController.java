@@ -28,7 +28,9 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
             data = DBConnection.getUserData();
+            System.out.println("Data Connected!");
         }catch (IOException e){
+            System.out.println("Fail Data Connected!");
             e.printStackTrace();
         }
     }
