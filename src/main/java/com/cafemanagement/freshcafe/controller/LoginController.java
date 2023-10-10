@@ -29,8 +29,6 @@ public class LoginController implements Initializable {
     private TextField userField;
     @FXML
     private PasswordField passwordField;
-    @FXML
-    private Button signInBtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
@@ -43,9 +41,10 @@ public class LoginController implements Initializable {
     }
     @FXML
     protected void signInBtn(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Parent)event.getSource()).getScene().getWindow();
         for (User user : data){
             if (userField.getText().equals(user.getUsername()) && passwordField.getText().equals(user.getPassword())){
-                SceneSwitch.change((Stage)signInBtn.getScene().getWindow(), "pages/RegisterPage.fxml");
+                SceneSwitch.home(stage);
                 return;
             }
         }
@@ -54,7 +53,8 @@ public class LoginController implements Initializable {
 
     @FXML
     protected void signUpBtn(ActionEvent event) throws IOException {
-        SceneSwitch.change((Stage)signInBtn.getScene().getWindow(), "pages/RegisterPage.fxml");
+        Stage stage = (Stage) ((Parent)event.getSource()).getScene().getWindow();
+        SceneSwitch.change(stage, "pages/RegisterPage.fxml");
     }
 
 }

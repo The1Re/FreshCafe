@@ -17,4 +17,8 @@ public class SceneSwitch {
         stage.setMaximized(true);
         stage.show();
     }
+
+    public static void home(Stage stage) throws IOException {
+        change(stage, "pages/DashBoardPage.fxml");
+    }
 }

@@ -3,6 +3,7 @@ package com.cafemanagement.freshcafe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -15,6 +16,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("pages/LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("FreshCafe");
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("assets/logo.png")));
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.setResizable(false);
