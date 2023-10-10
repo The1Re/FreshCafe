@@ -89,7 +89,7 @@
                         <Insets right="10.0" />
                      </FlowPane.margin>
                   </Label>
-                  <Hyperlink focusTraversable="false" text="Sign Up" textFill="#d75c5c" underline="true">
+                  <Hyperlink focusTraversable="false" onAction="#signUpBtn" text="Sign Up" textFill="#d75c5c" underline="true">
                      <font>
                         <Font size="24.0" />
                      </font>
