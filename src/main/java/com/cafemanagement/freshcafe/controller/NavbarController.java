@@ -4,5 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 
 public class NavbarController {
-    @FXML private ImageView homebtn, menubtn, tablebtn,stockbtn;
+    @FXML private ImageView homebtn, menubtn, tablebtn, stockbtn, exitbtn;
+
+    public void clickExitBtn(){
+        System.exit(0);
+    }
 }

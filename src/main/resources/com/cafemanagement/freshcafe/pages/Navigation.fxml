@@ -52,5 +52,13 @@
             <Insets top="70.0" />
          </VBox.margin>
       </ImageView>
+      <ImageView fx:id="exitbtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clickExitBtn" pickOnBounds="true" preserveRatio="true" styleClass="item">
+         <image>
+            <Image url="@../assets/navbar/exit.png" />
+         </image>
+         <VBox.margin>
+            <Insets top="320.0" />
+         </VBox.margin>
+      </ImageView>
    </children>
 </VBox>
