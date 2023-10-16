@@ -19,6 +19,7 @@ public class SceneSwitch {
     }
 
     public static void home(Stage stage) throws IOException {
-        change(stage, "pages/DashBoardPage.fxml");
+        change(stage, "pages/LayoutPage.fxml");
+        stage.setFullScreen(true);
     }
 }

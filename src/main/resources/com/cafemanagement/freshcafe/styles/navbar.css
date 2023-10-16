@@ -1,0 +1,20 @@
+#navbar{
+    -fx-pref-width: 130px;
+    -fx-pref-height: 1049px;
+    -fx-background-color: #FFF;
+    -fx-border-style: none;
+    -fx-background-radius: 30px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+#logo{
+    -fx-pref-width: 88px;
+    -fx-pref-height: 85px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #AAA3A0;
+}
+
+.item:hover{
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
