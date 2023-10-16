@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.TableController">
+   <children>
+      <Label layoutX="738.0" layoutY="393.0" prefHeight="224.0" prefWidth="442.0" text="Table Page">
+         <font>
+            <Font size="80.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
