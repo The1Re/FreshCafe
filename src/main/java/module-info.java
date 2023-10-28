@@ -6,5 +6,6 @@ module com.cafemanagement.freshcafe {
     opens com.cafemanagement.freshcafe to javafx.fxml;
     exports com.cafemanagement.freshcafe;
     exports com.cafemanagement.freshcafe.controller;
+    exports com.cafemanagement.freshcafe.model;
     opens com.cafemanagement.freshcafe.controller to javafx.fxml;
 }

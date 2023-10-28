@@ -18,7 +18,7 @@ public class SceneSwitch {
         stage.show();
     }
 
-    public static void home(Stage stage) throws IOException {
+    public static void change(Stage stage) throws IOException {
         change(stage, "pages/LayoutPage.fxml");
         stage.setFullScreen(true);
     }

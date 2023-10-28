@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,7 +37,6 @@ public class LoginController implements Initializable {
             System.out.println("Data Connected!");
         }catch (IOException e){
             System.out.println("Fail Data Connected!");
-            e.printStackTrace();
         }
     }
     @FXML
@@ -44,11 +44,12 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) ((Parent)event.getSource()).getScene().getWindow();
         for (User user : data){
             if (userField.getText().equals(user.getUsername()) && passwordField.getText().equals(user.getPassword())){
-                SceneSwitch.home(stage);
+                SceneSwitch.change(stage);
                 return;
             }
         }
         JOptionPane.showConfirmDialog(null, "Login Fail TryAgain!", "Status", JOptionPane.OK_CANCEL_OPTION);
+
     }
 
     @FXML
