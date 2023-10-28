@@ -30,7 +30,6 @@ public class RegisterController implements Initializable {
             System.out.println("Data Connected!");
         }catch (IOException e){
             System.out.println("Fail Data Connected!");
-            e.printStackTrace();
         }
     }
 
@@ -51,7 +50,7 @@ public class RegisterController implements Initializable {
             try {
                 DBConnection.updateUser(data);
                 System.out.println("Add data Complete!");
-                SceneSwitch.home(stage);
+                SceneSwitch.change(stage);
             }catch (IOException e) {
                 System.out.println("Cannot Add new Data!");
             }
