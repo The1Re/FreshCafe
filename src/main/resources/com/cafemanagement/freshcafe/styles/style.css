@@ -13,3 +13,22 @@
     -fx-text-fill: #818181;
 }
 
+/*stock page*/
+.card-status{
+    -fx-background-radius: 25px;
+    -fx-background-color: #D1CDCD; /*must change*/
+    -fx-pref-width: 313px;
+    -fx-pref-height: 183px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+
+.card-text{
+    -fx-fill: #463931;
+    -fx-font-size: 24px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+}
+
+.card-text-title{
+    -fx-font-size: 40px;
+}

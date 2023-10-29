@@ -65,6 +65,11 @@ public class DBConnection {
         updateProduct(data, false);
     }
 
+    public static void updateProduct(Product... value) throws IOException {
+        ArrayList<Product> data = new ArrayList<>(List.of(value));
+        updateProduct(data, true);
+    }
+
     public static ArrayList<Product> getProductData() throws IOException{
         ArrayList<Product> data = new ArrayList<>();
         Reader reader = new FileReader(productdb);
@@ -88,7 +93,7 @@ public class DBConnection {
         return data;
     }
 
-    public static void printObject(ArrayList data){
+    public static void printObject(List<Object> data){
         for (Object d : data){
             System.out.println(d);
         }

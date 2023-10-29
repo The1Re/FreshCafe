@@ -1,3 +1,4 @@
 AX001$Lemon Tea$69.00$100$Drink$true
 AX002$Green Tea$79.00$100$Drink$true
-
+AX003$Milk Tea$79.00$20$Drink$true
+AX004$Melon Tea$69.00$0$Drink$false

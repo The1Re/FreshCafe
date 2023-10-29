@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.StockController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.StockController">
    <children>
       <Label layoutX="58.0" layoutY="186.0" prefHeight="64.0" prefWidth="862.0" text="Product Stock" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="55.0">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <TableView fx:id="table" fixedCellSize="0.0" focusTraversable="false" layoutX="190.0" layoutY="188.0" prefHeight="670.0" prefWidth="1296.0">
+      <TableView fx:id="table" fixedCellSize="0.0" focusTraversable="false" layoutX="200.0" layoutY="187.0" prefHeight="437.0" prefWidth="1541.0" AnchorPane.leftAnchor="94.0" AnchorPane.topAnchor="582.0">
         <columns>
           <TableColumn fx:id="id" editable="false" prefWidth="75.0" text="Code ID" />
           <TableColumn fx:id="name" editable="false" prefWidth="75.0" text="Name Product" />
@@ -27,6 +31,48 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="1360.0" layoutY="896.0" mnemonicParsing="false" onAction="#testAddProduct" prefHeight="67.0" prefWidth="94.0" text="click" />
+      <Pane layoutX="124.0" layoutY="205.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5FCC9C;" styleClass="card-status" AnchorPane.leftAnchor="84.0" AnchorPane.topAnchor="216.0">
+         <children>
+            <Label fx:id="readyAmount" layoutX="46.0" layoutY="37.0" text="0">
+               <styleClass>
+                  <String fx:value="card-text" />
+                  <String fx:value="card-text-title" />
+               </styleClass>
+            </Label>
+            <Label layoutX="46.0" layoutY="113.0" prefHeight="35.0" prefWidth="218.0" styleClass="card-text" text="Ready for sale" />
+         </children>
+      </Pane>
+      <Pane layoutX="472.0" layoutY="219.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFEE93;" styleClass="card-status" AnchorPane.leftAnchor="464.0" AnchorPane.topAnchor="216.0">
+         <children>
+            <Label fx:id="almostAmount" layoutX="46.0" layoutY="37.0" text="0">
+               <styleClass>
+                  <String fx:value="card-text" />
+                  <String fx:value="card-text-title" />
+               </styleClass>
+            </Label>
+            <Label layoutX="46.0" layoutY="113.0" styleClass="card-text" text="Almost out of stock" />
+         </children>
+      </Pane>
+      <Pane layoutX="134.0" layoutY="215.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F65D5D;" styleClass="card-status" AnchorPane.leftAnchor="844.0" AnchorPane.topAnchor="216.0">
+         <children>
+            <Label fx:id="outAmount" layoutX="46.0" layoutY="37.0" text="0">
+               <styleClass>
+                  <String fx:value="card-text" />
+                  <String fx:value="card-text-title" />
+               </styleClass>
+            </Label>
+            <Label layoutX="46.0" layoutY="113.0" styleClass="card-text" text="Out of stock" />
+         </children>
+      </Pane>
+      <TextField fx:id="searchField" layoutX="202.0" layoutY="477.0" prefHeight="52.0" prefWidth="529.0" promptText="Search">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="66.0" fitWidth="65.0" layoutX="116.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/search.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
