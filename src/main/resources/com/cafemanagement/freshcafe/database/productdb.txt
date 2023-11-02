@@ -1,4 +1,8 @@
-AX001$Lemon Tea$69.00$100$Drink$true
-AX002$Green Tea$79.00$100$Drink$true
-AX003$Milk Tea$79.00$20$Drink$true
-AX004$Melon Tea$69.00$0$Drink$false
+AX001$Lemon Tea$69.00$100$Drink$Available
+AX002$Green Tea$79.00$100$Drink$Available
+AX003$Milk Tea$79.00$20$Drink$Available
+AX004$Melon Tea$69.00$0$Drink$Unavailable
+AX005$Pizza$120.00$5$Food$Available
+AX006$Sapagetti$120.00$50$Food$Available
+AX007$Coke$20.00$100$Drink$Available
+AX008$Bingsu$40.00$60$Food$Available

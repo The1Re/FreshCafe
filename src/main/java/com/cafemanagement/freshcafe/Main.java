@@ -11,13 +11,15 @@ import java.io.IOException;
 import java.net.URI;
 
 public class Main extends Application {
+    public static Stage primaryStage;
+    public static Image logo = new Image(Main.class.getResourceAsStream("assets/logo.png"));
     @Override
     public void start(Stage stage) throws IOException {
+        primaryStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("pages/LoginPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("FreshCafe");
-        stage.getIcons().add(new Image(Main.class.getResourceAsStream("assets/logo.png")));
-        stage.setScene(scene);
+        stage.getIcons().add(logo);
+        stage.setScene(new Scene(fxmlLoader.load()));
         stage.setMaximized(true);
         stage.setResizable(false);
         stage.show();

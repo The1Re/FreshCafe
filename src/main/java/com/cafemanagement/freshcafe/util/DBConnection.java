@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class DBConnection {
-    private static final File userdb = new File("src/main/resources/com/cafemanagement/freshcafe/database/userdb.txt");
-    private static final File productdb = new File("src/main/resources/com/cafemanagement/freshcafe/database/productdb.txt");
+    private static final File userdb = new File(GlobalVar.RESOURCE_PATH + "database/userdb.txt");
+    private static final File productdb = new File(GlobalVar.RESOURCE_PATH + "database/productdb.txt");
     public static void updateUser(List<User> data, boolean append) throws IOException {
         Writer writer = new FileWriter(userdb, append);
         for (User obj : data){
@@ -49,7 +49,7 @@ public class DBConnection {
     public static void updateProduct(List<Product> data, Boolean append) throws IOException {
         Writer writer = new FileWriter(productdb, append);
         for (Product obj : data){
-            writer.write(String.format("%s$%s$%.2f$%d$%s$%b\n",
+            writer.write(String.format("%s$%s$%.2f$%d$%s$%s\n",
                     obj.getId(),
                     obj.getName(),
                     obj.getPrice(),
@@ -84,7 +84,7 @@ public class DBConnection {
                     Double.parseDouble(list[2]),
                     Integer.parseInt(list[3]),
                     list[4],
-                    Boolean.parseBoolean(list[5])
+                    list[5]
             ));
         }
 

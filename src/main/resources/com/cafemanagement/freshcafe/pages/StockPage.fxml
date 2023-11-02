@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,6 +27,7 @@
             <TableColumn fx:id="quantity" editable="false" prefWidth="75.0" text="Quantity" />
             <TableColumn fx:id="category" editable="false" prefWidth="75.0" text="Category" />
             <TableColumn fx:id="status" editable="false" prefWidth="75.0" text="Status" />
+            <TableColumn fx:id="edit" prefWidth="50.0" text="Edit" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -74,5 +76,18 @@
             <Image url="@../assets/search.png" />
          </image>
       </ImageView>
+      <FlowPane alignment="CENTER" layoutX="1560.0" layoutY="459.0" onMouseClicked="#addProductButton" prefHeight="86.0" prefWidth="81.0" AnchorPane.leftAnchor="1554.0" AnchorPane.topAnchor="457.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/add.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="primary-btn" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </FlowPane>
    </children>
 </AnchorPane>

@@ -3,6 +3,8 @@ package com.cafemanagement.freshcafe.controller;
 import com.cafemanagement.freshcafe.model.User;
 import com.cafemanagement.freshcafe.util.DBConnection;
 import com.cafemanagement.freshcafe.util.SceneSwitch;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
-    List<User> data;
+    private ObservableList<User> data;
     @FXML
     private TextField userField;
     @FXML
@@ -26,7 +28,7 @@ public class RegisterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            data = DBConnection.getUserData();
+            data = FXCollections.observableList(DBConnection.getUserData());
             System.out.println("Data Connected!");
         }catch (IOException e){
             System.out.println("Fail Data Connected!");

@@ -18,12 +18,16 @@ import java.io.IOException;
 public class NavbarController {
     @FXML private ImageView homebtn, menubtn, tablebtn, stockbtn, exitbtn;
     private BorderPane container;
+    private ImageView selected;
 
     public void getPage(MouseEvent e) throws IOException {
         ImageView src = (ImageView) e.getSource();
+        if (selected == src)
+            return;
         container = (BorderPane) src.getScene().getRoot();
         Node page = FXMLLoader.load(Main.class.getResource(getPath(src)));
         container.setCenter(page);
+        selected = src;
     }
     private String getPath(ImageView src){
         if (src == menubtn)
