@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="164.0" prefWidth="627.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.BillCardController">
+   <children>
+      <ImageView fx:id="pdImage" fitHeight="132.0" fitWidth="130.0" layoutX="21.0" layoutY="16.0" pickOnBounds="true" />
+      <Label fx:id="pdName" layoutX="179.0" layoutY="26.0" text="Name of Product">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="pdAmount" layoutX="179.0" layoutY="87.0" text="x 1">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="pdPrice" alignment="CENTER_RIGHT" layoutX="404.0" layoutY="64.0" prefHeight="36.0" prefWidth="175.0" text="0 THB">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

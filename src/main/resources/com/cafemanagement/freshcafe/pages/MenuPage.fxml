@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.MenuController">
@@ -11,6 +18,126 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="1242.0" layoutY="128.0" prefHeight="742.0" prefWidth="516.0" style="-fx-background-color: white;" />
+      <AnchorPane layoutX="1034.0" layoutY="1034.0" prefHeight="1080.0" prefWidth="706.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="0.0">
+         <styleClass>
+            <String fx:value="shadow2" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="78.0" layoutY="44.0" text="Bills">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="36.0" layoutY="122.0">
+               <children>
+                  <ScrollPane fx:id="billScrollpane" hbarPolicy="NEVER" prefHeight="540.0" prefWidth="626.0" style="-fx-background-insets: 0; -fx-background: white;" vbarPolicy="NEVER" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="173.0" layoutY="935.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="350.0" text="checkout" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="primary-btn" />
+                  <String fx:value="danger-bg" />
+                  <String fx:value="shadow2" />
+               </styleClass>
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Label layoutX="93.0" layoutY="850.0" text="Total">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="770.0" text="Vat 7%">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="785.0" prefHeight="57.0" prefWidth="683.0" text="---------------------------">
+               <font>
+                  <Font size="58.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="719.0" text="Subtotal">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Pane fx:id="catagoryAllmenu" layoutX="82.0" layoutY="168.0" onMouseClicked="#selectCatagory" prefHeight="162.0" prefWidth="140.0">
+         <styleClass>
+            <String fx:value="card" />
+            <String fx:value="white-bg" />
+            <String fx:value="primary-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="24.0" layoutY="117.0" styleClass="card-text" text="All menu" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="23.0" layoutY="25.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/catagory_allmenu.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="catagoryCoffee" layoutX="309.0" layoutY="168.0" onMouseClicked="#selectCatagory" prefHeight="162.0" prefWidth="140.0">
+         <styleClass>
+            <String fx:value="card" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="34.0" layoutY="117.0" styleClass="card-text" text="Coffee" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="27.0" layoutY="22.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/catagory_coffee.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="catagoryMilk" layoutX="538.0" layoutY="168.0" onMouseClicked="#selectCatagory" prefHeight="162.0" prefWidth="140.0">
+         <styleClass>
+            <String fx:value="card" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="47.0" layoutY="117.0" styleClass="card-text" text="Milk" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/catagory_milk.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="catagoryTea" layoutX="777.0" layoutY="168.0" onMouseClicked="#selectCatagory" prefHeight="162.0" prefWidth="140.0">
+         <styleClass>
+            <String fx:value="card" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="46.0" layoutY="117.0" styleClass="card-text" text="Tea" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="25.0" layoutY="24.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/catagory_tea.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+      <AnchorPane layoutX="54.0" layoutY="391.0" prefHeight="626.0" prefWidth="916.0">
+         <children>
+            <ScrollPane fx:id="productPane" hbarPolicy="NEVER" prefHeight="626.0" prefWidth="1008.0" style="-fx-background-insets: 0; -fx-background-color: transparent;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
