@@ -29,6 +29,7 @@ public class LayoutController implements Initializable {
         try {
             nav = FXMLLoader.load(Main.class.getResource("pages/Navigation.fxml"));
             page = FXMLLoader.load(Main.class.getResource("pages/DashBoardPage.fxml"));
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,15 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.TableController">
    <children>
-      <Label layoutX="738.0" layoutY="393.0" prefHeight="224.0" prefWidth="442.0" text="Table Page">
+      <Label layoutX="88.0" layoutY="56.0" prefHeight="224.0" prefWidth="442.0" text="Table" textFill="#463931" AnchorPane.bottomAnchor="938.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="1577.0" AnchorPane.topAnchor="46.0">
          <font>
-            <Font size="80.0" />
+            <Font size="48.0" />
          </font>
       </Label>
+      <Label layoutX="110.0" layoutY="207.0" prefHeight="152.0" prefWidth="340.0" text="Status :" textFill="#463931" AnchorPane.bottomAnchor="867.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="165.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Circle fill="#e96767" layoutX="297.0" layoutY="187.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="868.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="1515.0" AnchorPane.topAnchor="165.0" />
+      <Circle fill="#e6e967" layoutX="412.0" layoutY="290.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="868.0" AnchorPane.leftAnchor="455.0" AnchorPane.rightAnchor="1329.0" AnchorPane.topAnchor="165.0" />
+      <Circle fill="#7eeb6c" layoutX="512.0" layoutY="287.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="865.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="1422.0" AnchorPane.topAnchor="165.0" />
+      <Button fx:id="Table1" cache="true" layoutX="62.0" layoutY="368.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE A1" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="1487.0" AnchorPane.topAnchor="294.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table4" cache="true" layoutX="62.0" layoutY="652.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE B1" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="1487.0" AnchorPane.topAnchor="530.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table5" cache="true" layoutX="444.0" layoutY="653.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE B2" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="1110.0" AnchorPane.topAnchor="530.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table2" cache="true" layoutX="453.0" layoutY="373.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE A2" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="1110.0" AnchorPane.topAnchor="294.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table3" cache="true" layoutX="825.0" layoutY="374.0" mnemonicParsing="false" onAction="#setTable" prefHeight="204.0" prefWidth="356.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE A3" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="838.0" AnchorPane.rightAnchor="726.0" AnchorPane.topAnchor="294.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table6" cache="true" layoutX="834.0" layoutY="657.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE B3" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="838.0" AnchorPane.rightAnchor="726.0" AnchorPane.topAnchor="530.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <AnchorPane fx:id="settable" layoutX="1255.0" layoutY="226.0" prefHeight="662.0" prefWidth="562.0" style="-fx-background-color: AAA3A0; -fx-background-radius: 20;" visible="false" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="1255.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="301.0">
+         <effect>
+            <Blend />
+         </effect>
+         <children>
+            <Button fx:id="clear1" layoutX="58.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#clearTable1" prefHeight="93.0" prefWidth="166.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Clear">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="275.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#completeTable1" prefHeight="93.0" prefWidth="152.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="OK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="textTable" layoutX="52.0" layoutY="22.0" prefHeight="99.0" prefWidth="151.0" text="Table" textFill="#463931">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="52.0" prefHeight="223.0" prefWidth="331.0" text="Name :" textFill="#463931">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="207.0" prefHeight="93.0" prefWidth="368.0" text="How many  persons?" textFill="#463931">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="gradeSpinner" layoutX="76.0" layoutY="303.0" prefHeight="50.0" prefWidth="248.0" style="-fx-background-radius: 20;" />
+            <TextField layoutX="177.0" layoutY="136.0" prefHeight="57.0" prefWidth="192.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="469.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="136.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="Table41" cache="true" layoutX="80.0" layoutY="540.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE C1" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="1487.0" AnchorPane.topAnchor="766.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table411" cache="true" layoutX="80.0" layoutY="776.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE C2" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="1110.0" AnchorPane.topAnchor="766.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="Table4111" cache="true" layoutX="450.0" layoutY="776.0" mnemonicParsing="false" onAction="#setTable" prefHeight="186.0" prefWidth="302.0" style="-fx-background-color: E96767; -fx-background-radius: 20;" text="TABLE C2" textFill="WHITE" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="838.0" AnchorPane.rightAnchor="726.0" AnchorPane.topAnchor="766.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </Button>
    </children>
 </AnchorPane>
