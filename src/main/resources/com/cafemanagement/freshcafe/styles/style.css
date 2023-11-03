@@ -53,8 +53,16 @@
 .danger-bg{
     -fx-background-color: #F65D5D;
 }
+.parent-bg{
+    -fx-background-color: #EDEDED;
+}
+
+
 .danger-text{
     -fx-text-fill: #F65D5D;
+}
+.white-text{
+    -fx-text-fill: white;
 }
 
 .shadow{

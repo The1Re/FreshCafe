@@ -2,9 +2,14 @@ package com.cafemanagement.freshcafe.util;
 
 import com.cafemanagement.freshcafe.model.Product;
 import com.cafemanagement.freshcafe.model.User;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.ImageView;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -96,6 +101,34 @@ public class DBConnection {
     public static void printObject(List<Object> data){
         for (Object d : data){
             System.out.println(d);
+        }
+    }
+
+    public static void saveImage(ImageView imageView, Product p){
+        try {
+            String dir = GlobalVar.RESOURCE_PATH + "database/images/";
+
+            File target = new File(dir + p.getId()+p.getName() + ".jpg");
+
+            //Convert to bufferedImage
+            BufferedImage toWrite = SwingFXUtils.fromFXImage(imageView.getImage(), null);
+
+            //write using ImageIO
+            ImageIO.write(toWrite, "png", target);
+
+            System.out.println("Image saved at " + target.getAbsolutePath());
+        } catch (Exception x) {
+            System.err.println("Failed to save Image");
+        }
+    }
+
+    public static void imageDelete(Product data){
+        File folder = new File(GlobalVar.RESOURCE_PATH + "database/images/");
+        for (File file : folder.listFiles()){
+            if (file.getAbsolutePath().contains(data.getId()+data.getName())) {
+                file.delete();
+                break;
+            }
         }
     }
 }

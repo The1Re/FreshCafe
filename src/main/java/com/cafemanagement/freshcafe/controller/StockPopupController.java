@@ -77,7 +77,9 @@ public class StockPopupController implements Initializable {
     private void editPopUp(Product p){
         mainBtn.setText("Edit");
         pdId.setText(p.getId());
+        pdId.setDisable(true);
         pdName.setText(p.getName());
+        pdName.setDisable(true);
         pdPrice.setText(Double.toString(p.getPrice()));
         pdQuantity.setText(Integer.toString(p.getQuantity()));
         pdCategory.setValue(p.getCategory());
@@ -94,8 +96,9 @@ public class StockPopupController implements Initializable {
         pdStatus.getItems().add("Available");
         pdStatus.getItems().add("Unavailable");
 
-        pdCategory.getItems().add("Drink");
-        pdCategory.getItems().add("Food");
+        pdCategory.getItems().add("Coffee");
+        pdCategory.getItems().add("Milk");
+        pdCategory.getItems().add("Tea");
     }
 
     @FXML
@@ -104,29 +107,10 @@ public class StockPopupController implements Initializable {
         configFileChooser(chooser);
         File file = chooser.showOpenDialog(pdName.getScene().getWindow());
         if (file != null){
-            Image image = new Image(file.getPath());
+            Image image = new Image(file.getAbsolutePath());
             pdImage.setImage(image);
         }else{
             System.out.println("Fail Saving File");
-        }
-    }
-
-    private void saveImage(ImageView imageView){
-        try {
-//            String dir = "src/main/resources/com/cafemanagement/freshcafe/database/images/";
-            String dir = GlobalVar.RESOURCE_PATH + "database/images/";
-
-            File target = new File(dir + pdId.getText()+pdName.getText() + ".jpg");
-
-            //Convert to bufferedImage
-            BufferedImage toWrite = SwingFXUtils.fromFXImage(imageView.getImage(), null);
-
-            //write using ImageIO
-            ImageIO.write(toWrite, "png", target);
-
-            System.out.println("Image saved at " + target.getAbsolutePath());
-        } catch (Exception x) {
-            System.err.println("Failed to save Image");
         }
     }
 
@@ -171,19 +155,20 @@ public class StockPopupController implements Initializable {
         }
 
         Product p = new Product(id, name, price, stock, type, status);
-        if (product == null){
+        if (product == null){ //Add Product
             add(p);
-        }else{
+        }else{ //Edit Product
             parentController.editData(product, p);
             parentController.updateStatusAmount();
             close();
         }
     }
     private void add(Product p) throws IOException {
-        saveImage(pdImage);
         StockController.data.add(p);
-        parentController.updateStatusAmount();
         DBConnection.updateProduct(p);
+        DBConnection.saveImage(pdImage, p);
+
+        parentController.updateStatusAmount();
         close();
     }
 

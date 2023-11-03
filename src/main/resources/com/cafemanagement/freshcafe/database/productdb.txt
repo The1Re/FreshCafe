@@ -1,8 +1,9 @@
-AX001$Lemon Tea$69.00$100$Drink$Available
-AX002$Green Tea$79.00$100$Drink$Available
-AX003$Milk Tea$79.00$20$Drink$Available
-AX004$Melon Tea$69.00$0$Drink$Unavailable
-AX005$Pizza$120.00$5$Food$Available
-AX006$Sapagetti$120.00$50$Food$Available
-AX007$Coke$20.00$100$Drink$Available
-AX008$Bingsu$40.00$60$Food$Available
+AX001$cappucino$50.00$50$Coffee$Available
+AX002$Espresso$60.00$100$Coffee$Available
+AX003$Latte$60.00$10$Coffee$Available
+AX004$Mocha$50.00$30$Coffee$Available
+AX005$PiccoloLatte$40.00$0$Coffee$UnAvailable
+AX006$CocoaCaramel$60.00$100$Milk$Available
+AX007$IcedSignatureChocolate$80.00$100$Milk$Available
+AX008$MatchaLatteDay$50.00$0$Tea$UnAvailable
+AX009$ThaiTea$50.00$20$Tea$Available

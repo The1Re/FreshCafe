@@ -2,16 +2,15 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.MenuController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.MenuController">
    <children>
-      <Label layoutX="785.0" layoutY="313.0" prefHeight="344.0" prefWidth="635.0" text="Menu Page">
+      <Label layoutX="158.0" layoutY="92.0" text="Menu" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="44.0">
          <font>
-            <Font size="63.0" />
+            <Font size="48.0" />
          </font>
       </Label>
-      <FlowPane fx:id="pane" layoutX="55.0" layoutY="108.0" prefHeight="903.0" prefWidth="651.0" />
+      <AnchorPane layoutX="1242.0" layoutY="128.0" prefHeight="742.0" prefWidth="516.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>

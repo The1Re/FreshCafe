@@ -88,8 +88,8 @@ public class StockController implements Initializable {
                             editButton.setOnAction( (e) ->{ editBtn(p); });
                             deleteButton.setOnAction( (e)-> { deleteBtn(p); });
 
-                            editButton.getStyleClass().addAll("primary-bg", "primary-btn");
-                            deleteButton.getStyleClass().addAll("danger-bg", "primary-btn");
+                            editButton.getStyleClass().addAll("primary-bg", "primary-btn", "white-text");
+                            deleteButton.getStyleClass().addAll("danger-bg", "primary-btn", "white-text");
 
                             setGraphic(pane);
                         }
@@ -166,7 +166,7 @@ public class StockController implements Initializable {
         return loader;
     }
     @FXML
-    private void addProductButton() throws IOException {
+    private void addProductButton(){
         try{
             Stage stage = new Stage();
             stage.setTitle("Adding Stock...");
@@ -196,7 +196,10 @@ public class StockController implements Initializable {
         ObservableList<Product> temp = data;
         try{
             temp.remove(product);
+
             DBConnection.updateProduct(temp);
+            DBConnection.imageDelete(product);
+            updateStatusAmount();
             data = temp;
         }catch (IOException e){
             System.out.println("Fail to Delete!");
