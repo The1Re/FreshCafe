@@ -188,8 +188,9 @@ public class StockController implements Initializable {
             System.out.println("Cannot load FXML!");
         }
     }
-    public void editData(Product oldProduct, Product newProduct){
+    public void editData(Product oldProduct, Product newProduct) throws IOException {
         data.set(data.indexOf(oldProduct), newProduct);
+        DBConnection.updateProduct(data);
     }
 
     private void deleteBtn(Product product) {

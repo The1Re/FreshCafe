@@ -156,18 +156,12 @@ public class StockPopupController implements Initializable {
 
         Product p = new Product(id, name, price, stock, type, status);
         if (product == null){ //Add Product
-            add(p);
+            StockController.data.add(p);
+            DBConnection.updateProduct(p);
+            DBConnection.saveImage(pdImage, p);
         }else{ //Edit Product
             parentController.editData(product, p);
-            parentController.updateStatusAmount();
-            close();
         }
-    }
-    private void add(Product p) throws IOException {
-        StockController.data.add(p);
-        DBConnection.updateProduct(p);
-        DBConnection.saveImage(pdImage, p);
-
         parentController.updateStatusAmount();
         close();
     }

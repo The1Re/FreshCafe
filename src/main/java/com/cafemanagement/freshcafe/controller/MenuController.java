@@ -26,11 +26,13 @@ import java.util.*;
 
 public class MenuController implements Initializable{
     private final double VAT = 0.07;
+    private ObservableList<Product> data;
+    Map<BillProduct, BillCardController> controller = new HashMap<>();
+    Map<BillProduct, Node> node = new HashMap<>();
     private VBox billList;
     private Pane selectedCatagory;
     private GridPane listProduct;
     private double total, subtotal, vat;
-    private ObservableList<Product> data;
     @FXML
     private ScrollPane productPane;
     @FXML
@@ -85,8 +87,10 @@ public class MenuController implements Initializable{
         listProduct.getChildren().clear();
         int row = 0, col = 0;
         for (Product product : data){
-            String catagory = product.getCategory();
+            if (product.getStatus().equals("Unavailable"))
+                continue;
 
+            String catagory = product.getCategory();
             if (selectedCatagory == catagoryCoffee && catagory.equals("Coffee")){
                 loadData(product, col++, row);
             }else if (selectedCatagory == catagoryTea && catagory.equals("Tea")){
@@ -119,9 +123,6 @@ public class MenuController implements Initializable{
         }
     }
 
-
-    Map<BillProduct, BillCardController> controller = new HashMap<>();
-    Map<BillProduct, Node> node = new HashMap<>();
     public void addBills(BillProduct p){
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("pages/BillCard.fxml"));
@@ -169,8 +170,8 @@ public class MenuController implements Initializable{
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("pages/PaymentPage.fxml"));
             stage.setScene(new Scene(loader.load()));
-            PaymentController controller = loader.getController();
-            controller.setData(total);
+            PaymentController con = loader.getController();
+            con.setData(total, stage, this);
 
             stage.setTitle("Thank you...");
             stage.initOwner(Main.primaryStage);
@@ -178,9 +179,29 @@ public class MenuController implements Initializable{
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setResizable(false);
             stage.show();
+
+            for (BillProduct billData: controller.keySet())
+                changeData(billData);
+            DBConnection.updateProduct(data);
         }catch (IOException e){
             System.out.println("Cannot load FXML!");
             e.printStackTrace();
         }
+    }
+    public void changeData(BillProduct billData){
+        for (int i=0; i<data.size(); i++){
+            if (billData.getName().equals(data.get(i).getName())){
+                data.get(i).setQuantity( data.get(i).getQuantity()-billData.getAmount() );
+                break;
+            }
+        }
+    }
+
+    public void resetBill(){
+        controller.clear();
+        node.clear();
+        billList.getChildren().clear();
+        updateBills();
+        updateList();
     }
 }

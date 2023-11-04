@@ -35,13 +35,15 @@ public class CardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,100);
-        valueFactory.setValue(0);
-        amount.setValueFactory(valueFactory);
+
     }
 
     public void setData(Product product, MenuController menuController){
         this.menuController = menuController;
+
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,product.getQuantity());
+        valueFactory.setValue(0);
+        amount.setValueFactory(valueFactory);
 
         pdImage.setImage(new Image(new File(GlobalVar.RESOURCE_PATH + "/database/images/" + product.getId()+product.getName() + ".jpg").getAbsolutePath()));
         pdName.setText(product.getName());
