@@ -1,13 +1,12 @@
 package com.cafemanagement.freshcafe.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,29 +22,42 @@ public class TableController implements Initializable {
     private Spinner<Integer> gradeSpinner;
     @FXML
     private Label textTable;
+    @FXML
+    private TextField textName;
+    @FXML
+    private Circle setCircle;
+    private Button selectButton;
 
     @FXML
-    public void setTable() {
+    public void setTable(ActionEvent e) {
+        selectButton = (Button) e.getSource();
         settable.setVisible(true);
+        textTable.setText(selectButton.getText());
     }
 
     @FXML
-    public void clearTable1(MouseEvent e){
-        Button cilk = (Button)e.getSource();
-        cilk.setStyle("-fx-background-color: #e96767; -fx-background-radius: 20;");
+    public void clearTable1(MouseEvent e) {
+        selectButton.setStyle("-fx-background-color: #e96767; -fx-background-radius: 20;");
+        setCircle.setStyle(selectButton.getStyle());
+        textName.setText(null);
     }
+
     @FXML
-    public void completeTable1(MouseEvent e){
-        Button cilk = (Button)e.getSource();
-        cilk.setStyle("-fx-background-color: #7eeb6c; -fx-background-radius: 20;");
+    public void completeTable1(MouseEvent e) {
+        selectButton.setStyle("-fx-background-color: #7eeb6c; -fx-background-radius: 20;");
+        setCircle.setStyle("-fx-background-color: #7eeb6c; ");
     }
+
+    @FXML
+    public void changeTable(MouseEvent e) {
+        selectButton.setStyle("-fx-background-color: #e6e967; -fx-background-radius: 20;");
+        setCircle.setStyle(selectButton.getStyle());
+    }
+
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SpinnerValueFactory<Integer> gradesValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,20);
+        SpinnerValueFactory<Integer> gradesValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 20);
         this.gradeSpinner.setValueFactory(gradesValueFactory);
 
-
-        //textTable.setText(String.toString(table));
     }
-
 }
