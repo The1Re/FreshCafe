@@ -3,61 +3,119 @@ package com.cafemanagement.freshcafe.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class TableController implements Initializable {
-    @FXML
-    private Button Table1;
+    private static final int READY=0, BUSY=1, PREPARE=2;
+    private Map<Button, SetupCard> tables = new HashMap<>();
+    private Button selectedTable;
+    SpinnerValueFactory<Integer> valueFactory;
 
     @FXML
-    private AnchorPane settable;
-    @FXML
-    private Spinner<Integer> gradeSpinner;
-    @FXML
-    private Label textTable;
-    @FXML
-    private TextField textName;
-    @FXML
-    private Circle setCircle;
-    private Button selectButton;
+    private TextField nameText;
 
     @FXML
-    public void setTable(ActionEvent e) {
-        selectButton = (Button) e.getSource();
-        settable.setVisible(true);
-        textTable.setText(selectButton.getText());
-    }
+    private Spinner<Integer> spinner;
 
     @FXML
-    public void clearTable1(MouseEvent e) {
-        selectButton.setStyle("-fx-background-color: #e96767; -fx-background-radius: 20;");
-        setCircle.setStyle(selectButton.getStyle());
-        textName.setText(null);
-    }
+    private Circle status;
+    @FXML
+    private Label tableName;
 
     @FXML
-    public void completeTable1(MouseEvent e) {
-        selectButton.setStyle("-fx-background-color: #7eeb6c; -fx-background-radius: 20;");
-        setCircle.setStyle("-fx-background-color: #7eeb6c; ");
-    }
+    private GridPane gridTable;
 
-    @FXML
-    public void changeTable(MouseEvent e) {
-        selectButton.setStyle("-fx-background-color: #e6e967; -fx-background-radius: 20;");
-        setCircle.setStyle(selectButton.getStyle());
-    }
 
-    @FXML
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SpinnerValueFactory<Integer> gradesValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 20);
-        this.gradeSpinner.setValueFactory(gradesValueFactory);
+        valueFactory  = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,4);
+        spinner.setValueFactory(valueFactory);
+
+        int i=0;
+        for (Node node : gridTable.getChildren()){
+            Button table = (Button)node;
+            tables.put(table, new SetupCard(table.getText()));
+            if (i++==0){
+                selectedTable = table;
+                tables.get(selectedTable).load();
+            }
+        }
+    }
+
+    @FXML
+    public void okBtn(ActionEvent e){
+        String tn = selectedTable.getText();
+        String name = nameText.getText();
+        int amount = spinner.getValue();
+        SetupCard setup = tables.get(selectedTable);
+        setup.setData(tn, BUSY, name, amount);
+        setup.load();
+    }
+    @FXML
+    public void clearBtn(ActionEvent e){
+        SetupCard setup = tables.get(selectedTable);
+        setup.clearData(selectedTable.getText());
+        setup.load();
+    }
+    @FXML
+    public void setup(ActionEvent e){
+        Button node = (Button) e.getSource();
+        selectedTable = node;
+
+        tables.get(node).load();
 
     }
+
+    public class SetupCard{
+        private String tableName;
+        private int status;
+        private String name;
+        private int personAmount;
+        public SetupCard(String tableName){
+            this.tableName = tableName;
+            status = READY;
+        }
+        public void setData(String tableName, int status, String name, int personAmount) {
+            this.tableName = tableName;
+            this.status = status;
+            this.name = name;
+            this.personAmount = personAmount;
+        }
+        public void clearData(String tableName){
+            this.tableName = tableName;
+            status = READY;
+            name = "";
+            personAmount = 0;
+        }
+
+        public void load(){
+            TableController.this.tableName.setText(tableName);
+            TableController.this.nameText.setText(name);
+            switch (status){
+                case READY:
+                    selectedTable.getStyleClass().removeAll("table-busy", "table-prepare");
+                    selectedTable.getStyleClass().add("table-ready");
+                    TableController.this.status.setFill(Paint.valueOf("#7eeb6c"));
+                    break;
+                case BUSY:
+                    selectedTable.getStyleClass().removeAll("table-ready", "table-prepare");
+                    selectedTable.getStyleClass().addAll("table-busy");
+                    TableController.this.status.setFill(Paint.valueOf("#e56767"));
+                    break;
+            }
+            valueFactory.setValue(personAmount);
+        }
+    }
+
 }

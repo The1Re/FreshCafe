@@ -149,3 +149,23 @@
 .shadow2{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 0);
 }
+
+/*for table page*/
+.table-ready{
+    -fx-background-color: #7eeb6c;
+}
+.table-busy{
+    -fx-background-color: #e96767;
+}
+.table-prepare{
+    -fx-background-color: #e6e967;
+}
+
+.table-card{
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+.table-card:pressed{
+    -fx-background-color: #a8a5a5;
+}
