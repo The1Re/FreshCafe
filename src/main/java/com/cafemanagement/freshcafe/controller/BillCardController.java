@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class BillCardController {
+    private MenuController.BillProduct product;
     @FXML
     private Label pdAmount;
 
@@ -19,9 +20,14 @@ public class BillCardController {
     @FXML
     private Label pdPrice;
     public void setData(MenuController.BillProduct p){
+        product = p;
         pdName.setText(p.getName());
         pdAmount.setText("x " + p.getAmount());
         pdPrice.setText(p.getPrice()*p.getAmount() + " THB");
         pdImage.setImage(new Image(p.getImage().getUrl()));
+    }
+
+    public MenuController.BillProduct getProduct(){
+        return product;
     }
 }

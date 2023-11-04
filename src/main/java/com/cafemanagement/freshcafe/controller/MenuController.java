@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,9 +23,11 @@ import javafx.scene.layout.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.text.DecimalFormat;
+import java.util.*;
 
 public class MenuController implements Initializable{
+    private final double VAT = 0.07;
     private ObservableList<Product> data;
     @FXML
     private ScrollPane productPane;
@@ -38,9 +41,16 @@ public class MenuController implements Initializable{
     private Pane catagoryTea;
     @FXML
     private ScrollPane billScrollpane;
+    @FXML
+    private Label subtotalBill;
+    @FXML
+    private Label totalBill;
+    @FXML
+    private Label vatBill;
     private VBox billList;
     private Pane selectedCatagory;
     private GridPane listProduct;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -109,19 +119,46 @@ public class MenuController implements Initializable{
         }
     }
 
+
+    Map<BillProduct, BillCardController> controller = new HashMap<>();
+    Map<BillProduct, Node> node = new HashMap<>();
     public void addBills(BillProduct p){
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("pages/BillCard.fxml"));
-            Node node = loader.load();
-            BillCardController controller = loader.getController();
-            controller.setData(p);
+            Node n = loader.load();
+            BillCardController con = loader.getController();
+            con.setData(p);
 
-            billList.getChildren().add(node);
+            node.put(p, n);
+            controller.put(p, con);
+
+            billList.getChildren().add(n);
             billScrollpane.setContent(billList);
         }catch (IOException e){
             System.out.println("Fail load FXML!");
             e.printStackTrace();
         }
+    }
+    public void editBills(BillProduct p){
+        controller.get(p).setData(p);
+    }
+    public void removeBills(BillProduct p){
+        billList.getChildren().remove(node.get(p));
+        controller.remove(p);
+        node.remove(p);
+    }
+
+    public void updateBills(){
+        double subtotal = 0, vat, total;
+        for (BillProduct bill : controller.keySet()){
+            subtotal += bill.getPrice()*bill.getAmount();
+        }
+        DecimalFormat format = new DecimalFormat("0.#");
+        vat = subtotal*VAT;
+        total = subtotal+vat;
+        subtotalBill.setText(format.format(subtotal) + " THB");
+        vatBill.setText(format.format(vat) + " THB");
+        totalBill.setText(format.format(total) + " THB");
     }
 
     public static class BillProduct{
@@ -151,6 +188,10 @@ public class MenuController implements Initializable{
 
         public Image getImage() {
             return image;
+        }
+
+        public void setAmount(int amount) {
+            this.amount = amount;
         }
     }
 }

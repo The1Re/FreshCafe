@@ -30,6 +30,8 @@ public class CardController implements Initializable {
     private Label pdPrice;
     @FXML
     private Spinner<Integer> amount;
+    private boolean isAdd = false;
+    private MenuController.BillProduct temp;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,14 +51,28 @@ public class CardController implements Initializable {
 
     @FXML
     public void addBtn(){
-        if (amount.getValue() == 0)
-            return;
-        MenuController.BillProduct product = new MenuController.BillProduct(
-                pdName.getText(),
-                Double.parseDouble(pdPrice.getText().substring(0, pdPrice.getText().length()-4)),
-                amount.getValue(),
-                pdImage.getImage()
-        );
-        menuController.addBills(product);
+        if (isAdd && amount.getValue()!=0){
+            temp.setAmount(amount.getValue());
+            menuController.editBills(temp);
+        }else{
+            if (amount.getValue() == 0){
+                if (temp == null)
+                    return;
+                menuController.removeBills(temp);
+                temp = null;
+            }else{
+                MenuController.BillProduct product = new MenuController.BillProduct(
+                        pdName.getText(),
+                        Double.parseDouble(pdPrice.getText().substring(0, pdPrice.getText().length()-4)),
+                        amount.getValue(),
+                        pdImage.getImage()
+                );
+
+                menuController.addBills(product);
+                temp = product;
+            }
+            isAdd = !isAdd;
+        }
+        menuController.updateBills();
     }
 }

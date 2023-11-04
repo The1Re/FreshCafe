@@ -64,6 +64,21 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="subtotalBill" alignment="CENTER_RIGHT" layoutX="424.0" layoutY="719.0" prefHeight="35.0" prefWidth="186.0" text="0 THB">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="vatBill" alignment="CENTER_RIGHT" layoutX="423.0" layoutY="769.0" prefHeight="35.0" prefWidth="186.0" text="0 THB">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalBill" alignment="CENTER_RIGHT" layoutX="425.0" layoutY="853.0" prefHeight="35.0" prefWidth="186.0" text="0 THB">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <Pane fx:id="catagoryAllmenu" layoutX="82.0" layoutY="168.0" onMouseClicked="#selectCatagory" prefHeight="162.0" prefWidth="140.0">
          <styleClass>
