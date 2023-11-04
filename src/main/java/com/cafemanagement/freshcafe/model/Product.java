@@ -6,15 +6,23 @@ public class Product {
     private double price;
     private int quantity;
     private String category;
-    private boolean status;
+    private String status;
 
-    public Product(String id, String name, double price, int quantity, String category, boolean status) {
+    public Product(String id, String name, double price, int quantity, String category, String status) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.category = category;
         this.status = status;
+    }
+    public void setProduct(Product product){
+        id = product.getId();
+        name = product.getName();
+        price = product.getPrice();
+        quantity = product.getQuantity();
+        category = product.getCategory();
+        status = product.getStatus();
     }
 
     public String getId() {
@@ -57,11 +65,11 @@ public class Product {
         this.category = category;
     }
 
-    public boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

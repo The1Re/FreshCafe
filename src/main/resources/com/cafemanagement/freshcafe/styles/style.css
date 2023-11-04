@@ -13,3 +13,139 @@
     -fx-text-fill: #818181;
 }
 
+/*stock page*/
+.card{
+    -fx-background-radius: 25px;
+    -fx-background-color: #D1CDCD; /*must change*/
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+
+.card-text{
+    -fx-fill: #463931;
+    -fx-font-size: 24px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+}
+
+.card-text-title{
+    -fx-font-size: 40px;
+}
+
+.primary-btn{
+    -fx-cursor: hand;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: #D1CDCD;
+}
+
+.primary-btn:pressed{
+    -fx-background-color: #a8a5a5;
+}
+
+.secondary-btn{
+    -fx-cursor: hand;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+.secondary-btn:pressed{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+}
+.secondary-btn:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 20, 0, 0, 0);
+}
+
+
+
+.white-bg{
+    -fx-background-color: white;
+}
+.primary-bg{
+    -fx-background-color: #6499E9;
+}
+.danger-bg{
+    -fx-background-color: #F65D5D;
+}
+.parent-bg{
+    -fx-background-color: #EDEDED;
+}
+.black-bg{
+    -fx-background-color: black;
+}
+
+
+.danger-text{
+    -fx-text-fill: #F65D5D;
+}
+.white-text{
+    -fx-text-fill: white;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+.shadow2{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 0);
+}
+
+/*stock page*/
+.card-status{
+    -fx-background-radius: 25px;
+    -fx-background-color: #D1CDCD; /*must change*/
+    -fx-pref-width: 313px;
+    -fx-pref-height: 183px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+
+.card-text{
+    -fx-fill: #463931;
+    -fx-font-size: 24px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+}
+
+.card-text-title{
+    -fx-font-size: 40px;
+}
+
+.primary-btn{
+    -fx-cursor: hand;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: #D1CDCD;
+}
+
+.primary-btn:pressed{
+    -fx-background-color: #a8a5a5;
+}
+
+.white-bg{
+    -fx-background-color: white;
+}
+.primary-bg{
+    -fx-background-color: #6499E9;
+}
+.danger-bg{
+    -fx-background-color: #F65D5D;
+}
+.parent-bg{
+    -fx-background-color: #EDEDED;
+}
+
+
+.danger-text{
+    -fx-text-fill: #F65D5D;
+}
+.white-text{
+    -fx-text-fill: white;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 4);
+}
+.shadow2{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 0);
+}

@@ -2,6 +2,7 @@ module com.cafemanagement.freshcafe {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
+    requires javafx.swing;
 
     opens com.cafemanagement.freshcafe to javafx.fxml;
     exports com.cafemanagement.freshcafe;

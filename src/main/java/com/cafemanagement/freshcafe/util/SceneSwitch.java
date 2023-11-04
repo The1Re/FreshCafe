@@ -20,6 +20,7 @@ public class SceneSwitch {
 
     public static void change(Stage stage) throws IOException {
         change(stage, "pages/LayoutPage.fxml");
+        stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
     }
 }
