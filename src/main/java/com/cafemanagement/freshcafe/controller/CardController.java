@@ -16,7 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CardController implements Initializable {
-    private Product product;
     private MenuController menuController;
     @FXML
     public AnchorPane pane;
@@ -41,7 +40,6 @@ public class CardController implements Initializable {
     }
 
     public void setData(Product product, MenuController menuController){
-        this.product = product;
         this.menuController = menuController;
 
         pdImage.setImage(new Image(new File(GlobalVar.RESOURCE_PATH + "/database/images/" + product.getId()+product.getName() + ".jpg").getAbsolutePath()));
