@@ -1,12 +1,11 @@
 package com.cafemanagement.freshcafe.controller;
 
 import com.cafemanagement.freshcafe.Main;
+import com.cafemanagement.freshcafe.model.BillProduct;
 import com.cafemanagement.freshcafe.model.Product;
 import com.cafemanagement.freshcafe.util.DBConnection;
-import com.cafemanagement.freshcafe.util.GlobalVar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,12 +14,11 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -28,6 +26,10 @@ import java.util.*;
 
 public class MenuController implements Initializable{
     private final double VAT = 0.07;
+    private VBox billList;
+    private Pane selectedCatagory;
+    private GridPane listProduct;
+    private double total, subtotal, vat;
     private ObservableList<Product> data;
     @FXML
     private ScrollPane productPane;
@@ -47,9 +49,7 @@ public class MenuController implements Initializable{
     private Label totalBill;
     @FXML
     private Label vatBill;
-    private VBox billList;
-    private Pane selectedCatagory;
-    private GridPane listProduct;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -149,11 +149,11 @@ public class MenuController implements Initializable{
     }
 
     public void updateBills(){
-        double subtotal = 0, vat, total;
+        subtotal = 0;
         for (BillProduct bill : controller.keySet()){
             subtotal += bill.getPrice()*bill.getAmount();
         }
-        DecimalFormat format = new DecimalFormat("0.#");
+        DecimalFormat format = new DecimalFormat("0.##");
         vat = subtotal*VAT;
         total = subtotal+vat;
         subtotalBill.setText(format.format(subtotal) + " THB");
@@ -161,37 +161,26 @@ public class MenuController implements Initializable{
         totalBill.setText(format.format(total) + " THB");
     }
 
-    public static class BillProduct{
-        private String name;
-        private double price;
-        private int amount;
-        private Image image;
+    @FXML
+    public void checkBill(){
+        if (total == 0)
+            return;
+        try {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("pages/PaymentPage.fxml"));
+            stage.setScene(new Scene(loader.load()));
+            PaymentController controller = loader.getController();
+            controller.setData(total);
 
-        public BillProduct(String name, double price, int amount, Image image) {
-            this.name = name;
-            this.price = price;
-            this.amount = amount;
-            this.image = image;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public int getAmount() {
-            return amount;
-        }
-
-        public Image getImage() {
-            return image;
-        }
-
-        public void setAmount(int amount) {
-            this.amount = amount;
+            stage.setTitle("Thank you...");
+            stage.initOwner(Main.primaryStage);
+            stage.getIcons().add(Main.logo);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setResizable(false);
+            stage.show();
+        }catch (IOException e){
+            System.out.println("Cannot load FXML!");
+            e.printStackTrace();
         }
     }
 }

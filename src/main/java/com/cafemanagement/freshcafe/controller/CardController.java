@@ -1,5 +1,6 @@
 package com.cafemanagement.freshcafe.controller;
 
+import com.cafemanagement.freshcafe.model.BillProduct;
 import com.cafemanagement.freshcafe.model.Product;
 import com.cafemanagement.freshcafe.util.GlobalVar;
 import javafx.fxml.FXML;
@@ -30,7 +31,7 @@ public class CardController implements Initializable {
     @FXML
     private Spinner<Integer> amount;
     private boolean isAdd = false;
-    private MenuController.BillProduct temp;
+    private BillProduct temp;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -59,7 +60,7 @@ public class CardController implements Initializable {
                 menuController.removeBills(temp);
                 temp = null;
             }else{
-                MenuController.BillProduct product = new MenuController.BillProduct(
+                BillProduct product = new BillProduct(
                         pdName.getText(),
                         Double.parseDouble(pdPrice.getText().substring(0, pdPrice.getText().length()-4)),
                         amount.getValue(),

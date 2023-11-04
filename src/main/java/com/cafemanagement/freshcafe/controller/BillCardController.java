@@ -1,5 +1,6 @@
 package com.cafemanagement.freshcafe.controller;
 
+import com.cafemanagement.freshcafe.model.BillProduct;
 import com.cafemanagement.freshcafe.model.Product;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -18,7 +19,7 @@ public class BillCardController {
 
     @FXML
     private Label pdPrice;
-    public void setData(MenuController.BillProduct p){
+    public void setData(BillProduct p){
         pdName.setText(p.getName());
         pdAmount.setText("x " + p.getAmount());
         pdPrice.setText(p.getPrice()*p.getAmount() + " THB");

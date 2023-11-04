@@ -34,7 +34,7 @@
                   <ScrollPane fx:id="billScrollpane" hbarPolicy="NEVER" prefHeight="540.0" prefWidth="626.0" style="-fx-background-insets: 0; -fx-background: white;" vbarPolicy="NEVER" />
                </children>
             </AnchorPane>
-            <Button layoutX="173.0" layoutY="935.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="350.0" text="checkout" textFill="WHITE">
+            <Button layoutX="173.0" layoutY="935.0" mnemonicParsing="false" onAction="#checkBill" prefHeight="70.0" prefWidth="350.0" text="checkout" textFill="WHITE">
                <styleClass>
                   <String fx:value="primary-btn" />
                   <String fx:value="danger-bg" />
