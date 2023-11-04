@@ -52,6 +52,7 @@ public class RegisterController implements Initializable {
             try {
                 DBConnection.updateUser(data);
                 System.out.println("Add data Complete!");
+                LoginController.member = user;
                 SceneSwitch.change(stage);
             }catch (IOException e) {
                 System.out.println("Cannot Add new Data!");

@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +22,11 @@ public class TableController implements Initializable {
     private Map<Button, SetupCard> tables = new HashMap<>();
     private Button selectedTable;
     SpinnerValueFactory<Integer> valueFactory;
+    @FXML
+    private Circle STATUS_BUSY;
+
+    @FXML
+    private Circle STATUS_READY;
 
     @FXML
     private TextField nameText;
@@ -39,6 +45,12 @@ public class TableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Tooltip ttReady = new Tooltip("Ready Status");
+        ttReady.setShowDelay(Duration.ZERO);
+        Tooltip ttBusy = new Tooltip("Busy Status");
+        ttBusy.setShowDelay(Duration.ZERO);
+        Tooltip.install(STATUS_READY, ttReady);
+        Tooltip.install(STATUS_BUSY, ttBusy);
         valueFactory  = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,4);
         spinner.setValueFactory(valueFactory);
 

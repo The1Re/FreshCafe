@@ -28,6 +28,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+    public static String member;
     private ObservableList<User> data;
     @FXML
     private TextField userField;
@@ -47,6 +48,7 @@ public class LoginController implements Initializable {
         Stage stage = (Stage) ((Parent)event.getSource()).getScene().getWindow();
         for (User user : data){
             if (userField.getText().equals(user.getUsername()) && passwordField.getText().equals(user.getPassword())){
+                member = userField.getText();
                 SceneSwitch.change(stage);
                 return;
             }

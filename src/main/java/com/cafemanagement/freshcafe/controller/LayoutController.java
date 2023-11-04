@@ -36,6 +36,7 @@ public class LayoutController implements Initializable {
         container.setPadding(new Insets(15,15,15,20));
         container.setLeft(nav);
         container.setCenter(page);
+        System.out.println("Welcome " + LoginController.member);
     }
 
 }
