@@ -116,11 +116,13 @@ public class TableController implements Initializable {
             TableController.this.nameText.setText(name);
             switch (status){
                 case READY:
+                    TableController.this.nameText.setDisable(false);
                     selectedTable.getStyleClass().removeAll("table-busy", "table-prepare");
                     selectedTable.getStyleClass().add("table-ready");
                     TableController.this.status.setFill(Paint.valueOf("#7eeb6c"));
                     break;
                 case BUSY:
+                    TableController.this.nameText.setDisable(true);
                     selectedTable.getStyleClass().removeAll("table-ready", "table-prepare");
                     selectedTable.getStyleClass().addAll("table-busy");
                     TableController.this.status.setFill(Paint.valueOf("#e56767"));
