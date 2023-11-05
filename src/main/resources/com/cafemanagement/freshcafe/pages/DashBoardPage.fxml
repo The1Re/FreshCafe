@@ -1,15 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.DashBoardController">
    <children>
-      <Label layoutX="672.0" layoutY="408.0" prefHeight="181.0" prefWidth="656.0" text="DashBorad Page">
+      <Label layoutX="672.0" layoutY="408.0" prefHeight="181.0" prefWidth="656.0" text="DashBorad" AnchorPane.bottomAnchor="950.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="1040.0" AnchorPane.topAnchor="54.0">
          <font>
-            <Font size="82.0" />
+            <Font size="48.0" />
          </font>
       </Label>
+      <Pane layoutX="1008.0" layoutY="193.0" prefHeight="369.0" prefWidth="857.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.bottomAnchor="549.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="993.0" AnchorPane.topAnchor="162.0">
+         <children>
+            <AreaChart fx:id="myChart" layoutX="-3.0" layoutY="32.0" prefHeight="300.0" prefWidth="711.0">
+              <xAxis>
+                <NumberAxis autoRanging="false" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="31.0" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" tickLabelGap="1.0" upperBound="10000.0" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </Pane>
+      <Pane layoutX="1012.0" layoutY="162.0" prefHeight="228.0" prefWidth="375.0" style="-fx-background-color: #F5F0BB; -fx-background-radius: 20;" AnchorPane.bottomAnchor="690.0" AnchorPane.leftAnchor="1012.0" AnchorPane.rightAnchor="533.0" AnchorPane.topAnchor="162.0">
+         <children>
+            <Label layoutX="30.0" layoutY="120.0" text="Total Sales">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="84.0" fitWidth="60.0" layoutX="30.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image%2029.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="31.0" layoutY="158.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane layoutX="1290.0" layoutY="176.0" prefHeight="228.0" prefWidth="358.0" style="-fx-background-color: #DBDFAA; -fx-background-radius: 20;" AnchorPane.bottomAnchor="690.0" AnchorPane.leftAnchor="1290.0" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="162.0">
+         <children>
+            <Label layoutX="32.0" layoutY="122.0" text="Expense">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="76.0" fitWidth="74.0" layoutX="35.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image%2031.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="32.0" layoutY="157.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane layoutX="1552.0" layoutY="162.0" prefHeight="228.0" prefWidth="222.0" style="-fx-background-color: #B3C890; -fx-background-radius: 20;" AnchorPane.bottomAnchor="690.0" AnchorPane.leftAnchor="1552.0" AnchorPane.topAnchor="162.0">
+         <children>
+            <Label layoutX="30.0" layoutY="114.0" text="Revenue">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="30.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/image%2033.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="37.0" layoutY="155.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane layoutX="70.0" layoutY="656.0" prefHeight="369.0" prefWidth="840.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="980.0" AnchorPane.topAnchor="650.0">
+         <children>
+            <Line endX="608.0" endY="-7.0" layoutX="208.0" layoutY="92.0" startX="-184.0" startY="-7.0" />
+            <Label layoutX="64.0" layoutY="40.0" text="No.">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="40.0" text="ProductName">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="420.0" layoutY="40.0" text="Amount(item)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="629.0" layoutY="40.0" text="Total Sale(Bath)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="106.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="171.0" text="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="241.0" text="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="1029.0" layoutY="655.0" prefHeight="369.0" prefWidth="857.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.leftAnchor="1000.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="650.0">
+         <children>
+            <ImageView fitHeight="96.0" fitWidth="113.0" layoutX="38.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/profile3%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="113.0" layoutX="38.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/profile2%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="113.0" layoutX="38.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/profile%201.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="166.0" layoutY="54.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+            <Label layoutX="166.0" layoutY="169.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+            <Label layoutX="166.0" layoutY="276.0" prefHeight="45.0" prefWidth="60.0" text="Label" />
+            <Line endX="608.0" endY="-7.0" layoutX="226.0" layoutY="136.0" startX="-184.0" startY="-7.0" />
+            <Line endX="608.0" endY="-7.0" layoutX="226.0" layoutY="257.0" startX="-184.0" startY="-7.0" />
+         </children></Pane>
+      <Label layoutX="73.0" layoutY="498.0" prefHeight="181.0" prefWidth="656.0" text="Ranking" AnchorPane.bottomAnchor="427.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="557.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="1010.0" layoutY="557.0" prefHeight="181.0" prefWidth="656.0" text="Employee" AnchorPane.bottomAnchor="427.0" AnchorPane.leftAnchor="1010.0" AnchorPane.topAnchor="557.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="addEmpolyee" layoutX="1537.0" layoutY="582.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Add" />
+      <Button fx:id="viewAllEmpolyee" layoutX="1649.0" layoutY="582.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" style="-fx-background-radius: 20;" text="View All" />
    </children>
 </AnchorPane>
