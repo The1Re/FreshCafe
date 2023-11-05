@@ -177,7 +177,7 @@ public class MenuController implements Initializable{
             stage.setTitle("Thank you...");
             stage.initOwner(Main.primaryStage);
             stage.getIcons().add(Main.logo);
-            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initModality(Modality.NONE);
             stage.setResizable(false);
             stage.show();
 

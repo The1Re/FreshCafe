@@ -1,8 +1,8 @@
-P001$BlackCoffee$60.00$45$Coffee$Available
-P002$Espresso$50.00$1$Coffee$Available
+P001$BlackCoffee$60.00$40$Coffee$Available
+P002$Espresso$50.00$5$Coffee$Available
 P003$Mocha$55.00$10$Coffee$Available
 P004$ChocolateMilk$50.00$60$Milk$Available
 P005$FreshMilk$50.00$85$Milk$Available
 P006$StrawberryCheeseCake$80.00$0$Milk$Unavailable
 P007$BlackTea$55.00$40$Tea$Available
-P008$GreenTea$60.00$80$Tea$Available
+P008$GreenTea$60.00$3$Tea$Available
