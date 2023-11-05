@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="450.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cafemanagement.freshcafe.controller.PaymentController">
    <children>
       <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="450.0">
@@ -26,13 +25,28 @@
                   <Insets top="10.0" />
                </padding>
             </Label>
-            <Button mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="92.0" text="Back">
+            <Label fx:id="log" textFill="#ff6969">
                <VBox.margin>
-                  <Insets bottom="60.0" top="50.0" />
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#savePdf" prefHeight="25.0" prefWidth="92.0" text="Save pdf">
+               <VBox.margin>
+                  <Insets top="10.0" />
                </VBox.margin>
                <styleClass>
                   <String fx:value="primary-btn" />
                   <String fx:value="primary-bg" />
+                  <String fx:value="white-text" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="92.0" text="Back">
+               <VBox.margin>
+                  <Insets bottom="50.0" top="10.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="primary-btn" />
+                  <String fx:value="danger-bg" />
                   <String fx:value="white-text" />
                </styleClass>
             </Button>

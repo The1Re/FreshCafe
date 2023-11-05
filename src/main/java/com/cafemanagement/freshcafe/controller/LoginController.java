@@ -3,6 +3,7 @@ package com.cafemanagement.freshcafe.controller;
 import com.cafemanagement.freshcafe.Main;
 import com.cafemanagement.freshcafe.model.User;
 import com.cafemanagement.freshcafe.util.DBConnection;
+import com.cafemanagement.freshcafe.util.PDFReceiptGenarator;
 import com.cafemanagement.freshcafe.util.SceneSwitch;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
