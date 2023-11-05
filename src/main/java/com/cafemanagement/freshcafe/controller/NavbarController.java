@@ -33,18 +33,21 @@ public class NavbarController implements Initializable {
     }
     public void initToolTip(){
         Tooltip dashboardTooltip = new Tooltip("Dashboard");
-        dashboardTooltip.setShowDelay(Duration.millis(500));
+        dashboardTooltip.setShowDelay(Duration.millis(300));
         Tooltip menuTooltip = new Tooltip("Menu");
-        menuTooltip.setShowDelay(Duration.millis(500));
+        menuTooltip.setShowDelay(Duration.millis(300));
         Tooltip tableTooltip = new Tooltip("Table");
-        tableTooltip.setShowDelay(Duration.millis(500));
+        tableTooltip.setShowDelay(Duration.millis(300));
         Tooltip stockTooltip = new Tooltip("Stock");
-        stockTooltip.setShowDelay(Duration.millis(500));
+        stockTooltip.setShowDelay(Duration.millis(300));
 
         Tooltip.install(homebtn, dashboardTooltip);
         Tooltip.install(menubtn, menuTooltip);
         Tooltip.install(tablebtn, tableTooltip);
         Tooltip.install(stockbtn, stockTooltip);
+
+        selected = menubtn;
+        selected.setStyle("-fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);");
     }
     public void getPage(MouseEvent e) throws IOException {
         ImageView src = (ImageView) e.getSource();
@@ -54,6 +57,11 @@ public class NavbarController implements Initializable {
         Node page = FXMLLoader.load(Main.class.getResource(getPath(src)));
         container.setCenter(page);
         selected = src;
+        homebtn.setStyle("-fx-effect: null");
+        menubtn.setStyle("-fx-effect: null");
+        tablebtn.setStyle("-fx-effect: null");
+        stockbtn.setStyle("-fx-effect: null");
+        selected.setStyle("-fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);");
     }
     private String getPath(ImageView src){
         if (src == menubtn)
