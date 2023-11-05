@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class NavbarController implements Initializable {
-    @FXML private ImageView homebtn, menubtn, tablebtn, stockbtn, exitbtn;
+    @FXML private ImageView menubtn, tablebtn, stockbtn, exitbtn;
     private BorderPane container;
     private ImageView selected;
 
@@ -32,8 +32,8 @@ public class NavbarController implements Initializable {
         initToolTip();
     }
     public void initToolTip(){
-        Tooltip dashboardTooltip = new Tooltip("Dashboard");
-        dashboardTooltip.setShowDelay(Duration.millis(300));
+//        Tooltip dashboardTooltip = new Tooltip("Dashboard");
+//        dashboardTooltip.setShowDelay(Duration.millis(300));
         Tooltip menuTooltip = new Tooltip("Menu");
         menuTooltip.setShowDelay(Duration.millis(300));
         Tooltip tableTooltip = new Tooltip("Table");
@@ -41,7 +41,7 @@ public class NavbarController implements Initializable {
         Tooltip stockTooltip = new Tooltip("Stock");
         stockTooltip.setShowDelay(Duration.millis(300));
 
-        Tooltip.install(homebtn, dashboardTooltip);
+//        Tooltip.install(homebtn, dashboardTooltip);
         Tooltip.install(menubtn, menuTooltip);
         Tooltip.install(tablebtn, tableTooltip);
         Tooltip.install(stockbtn, stockTooltip);
@@ -57,7 +57,7 @@ public class NavbarController implements Initializable {
         Node page = FXMLLoader.load(Main.class.getResource(getPath(src)));
         container.setCenter(page);
         selected = src;
-        homebtn.setStyle("-fx-effect: null");
+//        homebtn.setStyle("-fx-effect: null");
         menubtn.setStyle("-fx-effect: null");
         tablebtn.setStyle("-fx-effect: null");
         stockbtn.setStyle("-fx-effect: null");

@@ -20,14 +20,6 @@
             </ImageView>
          </children>
       </Pane>
-      <ImageView fx:id="homebtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#getPage" pickOnBounds="true" preserveRatio="true" styleClass="item">
-         <image>
-            <Image url="@../assets/navbar/home.png" />
-         </image>
-         <VBox.margin>
-            <Insets top="85.0" />
-         </VBox.margin>
-      </ImageView>
       <ImageView fx:id="menubtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#getPage" pickOnBounds="true" preserveRatio="true" styleClass="item">
          <image>
             <Image url="@../assets/navbar/menu.png" />
@@ -57,7 +49,7 @@
             <Image url="@../assets/navbar/exit.png" />
          </image>
          <VBox.margin>
-            <Insets top="320.0" />
+            <Insets top="460.0" />
          </VBox.margin>
       </ImageView>
    </children>
