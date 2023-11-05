@@ -140,7 +140,7 @@ public class StockController implements Initializable {
 
         for (Product p : data){
             if (p.getStatus().equals("Available")){
-                if (p.getQuantity() > 50)
+                if (p.getQuantity() > 30)
                     ready++;
                 else
                     almost++;

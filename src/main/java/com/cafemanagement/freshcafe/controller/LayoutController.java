@@ -28,7 +28,7 @@ public class LayoutController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             nav = FXMLLoader.load(Main.class.getResource("pages/Navigation.fxml"));
-            page = FXMLLoader.load(Main.class.getResource("pages/DashBoardPage.fxml"));
+            page = FXMLLoader.load(Main.class.getResource("pages/MenuPage.fxml"));
 
         } catch (IOException e) {
             throw new RuntimeException(e);

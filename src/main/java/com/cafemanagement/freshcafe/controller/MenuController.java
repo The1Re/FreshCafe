@@ -4,6 +4,7 @@ import com.cafemanagement.freshcafe.Main;
 import com.cafemanagement.freshcafe.model.BillProduct;
 import com.cafemanagement.freshcafe.model.Product;
 import com.cafemanagement.freshcafe.util.DBConnection;
+import com.cafemanagement.freshcafe.util.PDFReceiptGenarator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -203,5 +204,9 @@ public class MenuController implements Initializable{
         billList.getChildren().clear();
         updateBills();
         updateList();
+    }
+
+    public Set<BillProduct> getBillProduct(){
+        return controller.keySet();
     }
 }
